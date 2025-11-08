@@ -1,0 +1,89 @@
+QUEUECTL - QUICK START
+======================
+
+INSTALLATION
+============
+cd "d:\Projects\Personel\queue CTL"
+pip install -r requirements.txt
+
+USAGE
+=====
+
+Check Status:
+  python queuectl.py status
+
+Add a Regular Job (FIFO, priority 0):
+  python queuectl.py enqueue --id job1 --command "echo hello"
+
+Add an Urgent Job (high priority, jumps queue):
+  python queuectl.py enqueue --id urgent --command "alert.sh" --priority 10
+
+Add a Scheduled Job:
+  python queuectl.py enqueue --id backup --command "backup.sh" --run-at "2025-11-08T22:00:00Z"
+
+Start Workers (2 workers):
+  python queuectl.py worker start --count 2
+
+List Jobs:
+  python queuectl.py list
+
+Stop Workers:
+  python queuectl.py worker stop
+
+View Failed Jobs:
+  python queuectl.py dlq list
+
+Retry Failed Job:
+  python queuectl.py dlq retry job_id
+
+Get Configuration:
+  python queuectl.py config get max_retries
+
+Set Configuration:
+  python queuectl.py config set max_retries 5
+
+
+SMART SCHEDULING
+================
+Jobs WITHOUT priority (priority=0) execute in FIFO order
+Jobs WITH priority (priority>0) execute by importance, jumping ahead
+
+Priority Scale (0-10):
+  0    = FIFO (default)
+  1-9  = By importance level
+  10   = Emergency/Urgent
+
+
+COMPLETE WORKFLOW EXAMPLE
+=========================
+
+Terminal 1 - Start 2 workers:
+  python queuectl.py worker start --count 2
+
+Terminal 2 - Add mixed priority jobs:
+  python queuectl.py enqueue --id regular1 --command "echo Regular 1"
+  python queuectl.py enqueue --id regular2 --command "echo Regular 2"
+  python queuectl.py enqueue --id urgent --command "echo URGENT" --priority 10
+  python queuectl.py enqueue --id normal --command "echo Normal" --priority 5
+
+Terminal 3 - Monitor:
+  python queuectl.py status
+  python queuectl.py list
+
+Expected Order:
+  1. urgent (priority 10)
+  2. normal (priority 5)
+  3. regular1 (priority 0, older FIFO)
+  4. regular2 (priority 0, newer FIFO)
+
+When done:
+  python queuectl.py worker stop
+
+
+HELP
+====
+  python queuectl.py --help
+  python queuectl.py [COMMAND] --help
+
+
+For complete guide, see USAGE.md
