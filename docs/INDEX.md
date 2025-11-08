@@ -63,12 +63,10 @@ ARCHITECTURE.md                      21 KB, system design
 DESIGN.md                            23 KB, design decisions
 SMART_SCHEDULING.md                  1200+ lines, usage guide (NEW!)
 SMART_SCHEDULING_IMPLEMENTATION.md   250+ lines, technical details (NEW!)
-SMART_SCHEDULING_VISUAL_GUIDE.md     300+ lines, diagrams (NEW!)
 REQUIREMENTS_VALIDATION.md           Requirements evidence
 PROJECT_COMPLETION_SUMMARY.md        Complete project overview
 USAGE.md                             Command reference
 QUICKSTART.txt                       30-second setup
-SETUP_COMPLETE.txt                   Setup verification
 COMPLETION_REPORT.txt                Visual summary
 ```
 
@@ -252,92 +250,6 @@ python tests/windows_test.py
 
 ---
 
-## 🎓 Learning Path
-
-### 5 Minutes
-- Read QUICKSTART.txt
-- Run: `python queuectl.py --help`
-
-### 15 Minutes
-- Read README.md Introduction & Features
-- Follow Quick Start section
-- Run: `python tests/windows_test.py`
-
-### 30 Minutes
-- Read entire README.md
-- Read USAGE.md for command details
-- Explore queuectl/ directory
-
-### 1 Hour
-- Read ARCHITECTURE.md (system design)
-- Browse source code with ARCHITECTURE as reference
-- Read DESIGN.md (design decisions)
-
-### 2+ Hours
-- Deep dive into each module (cli.py, db.py, worker.py, etc.)
-- Review database schema and transaction logic
-- Study retry and backoff mechanisms
-
----
-
-## ❓ FAQ
-
-**Q: How do I get started?**
-A: Read QUICKSTART.txt, then follow the Quick Start section in README.md
-
-**Q: Where should I read to understand the architecture?**
-A: Start with "Architecture" section in README.md, then read ARCHITECTURE.md in full
-
-**Q: How do I verify all requirements are met?**
-A: Read REQUIREMENTS_VALIDATION.md for detailed evidence
-
-**Q: Can I use this in production?**
-A: Yes! It's production-ready. See "Deployment Readiness" in PROJECT_COMPLETION_SUMMARY.md
-
-**Q: What are the limitations?**
-A: See "Scalability Limitations" in ARCHITECTURE.md and "Trade-offs" in DESIGN.md
-
-**Q: How do I run tests?**
-A: Run: `python tests/windows_test.py`
-
-**Q: Where's the source code?**
-A: In the `queuectl/` directory. Start with `cli.py` for entry point.
-
----
-
-## 📞 Support Resources
-
-### Documentation Files
-- **README.md** - Start here for everything
-- **ARCHITECTURE.md** - Understand the system design
-- **DESIGN.md** - Learn the design decisions
-- **USAGE.md** - Find command syntax
-
-### Code Files
-- **queuectl/cli.py** - CLI command implementation
-- **queuectl/db.py** - Database and persistence
-- **queuectl/worker.py** - Job execution
-- **queuectl/config.py** - Configuration management
-
-### Testing
-- **tests/windows_test.py** - Run integration tests
-- **tests/test_basic.py** - View unit tests
-- **tests/integration_test.py** - Study full workflows
-
----
-
-## 🏁 Project Status
-
-**✅ COMPLETE & PRODUCTION READY**
-
-- All requirements met
-- All tests passing (6/6)
-- Comprehensive documentation (100 KB)
-- Production-grade code quality
-- Ready for immediate deployment
-
----
-
 ## 📋 Version Information
 
 | Field | Value |
@@ -352,5 +264,3 @@ A: In the `queuectl/` directory. Start with `cli.py` for entry point.
 ---
 
 **Navigation:** [README.md](README.md) | [QUICKSTART.txt](QUICKSTART.txt) | [ARCHITECTURE.md](ARCHITECTURE.md) | [DESIGN.md](DESIGN.md)
-
-Generated: November 8, 2025
