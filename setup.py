@@ -10,11 +10,11 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name="queuectl",
     version="1.0.0",
-    author="QueueCTL Team",
+    author="Queue-CTL",
     description="A CLI-based background job queue tool with persistent storage",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/queuectl",
+    url="https://github.com/YuvaSriSai18/Queue-CTL",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
