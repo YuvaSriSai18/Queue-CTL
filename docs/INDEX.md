@@ -259,7 +259,6 @@ python tests/windows_test.py
 | Last Updated | November 8, 2025 |
 | Completion | 100% |
 | Test Results | 6/6 Passing ✓ |
-| Evaluation Score | 100/100 |
 
 ---
 
